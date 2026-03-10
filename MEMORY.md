@@ -12,7 +12,10 @@
 - Route Google Workspace actions into the `gog` skill.
 - When Google Workspace content should become notes, use `gog` first and the Obsidian workflow second.
 - Notes created from chat should be hierarchical, tidy, and logically structured.
+- Obsidian notes should focus on core ideas, decisions, relationships, and action items first.
 - Prefer valid Obsidian-flavored Markdown with useful wikilinks, frontmatter, and tags.
+- Use Mermaid only when it clearly improves explanation.
+- Short routing prefixes are preferred: `notes:`, `obsidian:`, `vault:`, `gog:`, and `capture:`.
 - Prefer the `gog`, `obsidian-markdown`, and `obsidian-cli` skills when they are available.
 - After successful edits in the Obsidian vault repo, commit the focused changes and push them.
 - Environment-specific vault details belong in `TOOLS.md`.

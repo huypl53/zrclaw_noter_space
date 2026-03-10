@@ -20,6 +20,7 @@ This file is for machine-specific details that the assistant should not guess.
 ## Workflow Notes
 
 - Check whether the target note already exists before creating a new note.
+- Extract core ideas and structure before polishing wording.
 - Reuse the existing vault hierarchy before creating new folders or naming schemes.
 - If you establish a new taxonomy rule, also record it in `MEMORY.md`.
 - Commit only the files touched for the current note task.
@@ -30,6 +31,14 @@ This file is for machine-specific details that the assistant should not guess.
 - Gmail, Calendar, Drive, Contacts, Sheets, or Docs actions mean `gog`.
 - Google Workspace content that should be stored in the vault means `gog` first, then Obsidian.
 - If a request needs both retrieval and note creation, do not stop after retrieval. Finish the note workflow.
+- Use Mermaid only when the note benefits from a visual flow, relationship map, or sequence explanation.
+
+## Prompt Shortcuts
+
+- `notes:` or `obsidian:` — note writing, note cleanup, and long-content distillation.
+- `vault:` — direct vault operations.
+- `gog:` — Google Workspace actions.
+- `capture:` — retrieval first, note creation second.
 
 ## Tool Hints
 

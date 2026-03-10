@@ -24,6 +24,7 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
 4. If a skill is unavailable, still produce valid Obsidian-flavored Markdown and edit the files directly.
 5. Put notes into the existing folder hierarchy first. Do not invent new top-level folders casually. If the right destination is unclear, use the configured inbox or staging folder from `TOOLS.md`.
 6. Make notes clean and durable:
+   - extract the core ideas, decisions, relationships, and action items first
    - one clear topic per note
    - a precise title
    - concise frontmatter only when useful
@@ -45,10 +46,21 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
 ## Obsidian Standards
 
 - Prefer Obsidian-flavored Markdown over plain Markdown when it improves navigation.
+- Write for core ideas first. Compress noise, repetition, and filler before polishing the note.
 - Use wikilinks for internal notes and standard Markdown links for external URLs.
 - Favor existing naming conventions, folder structure, and Maps of Content over creating parallel systems.
 - Distill chat input into clean notes. Do not dump raw transcripts into permanent notes unless explicitly asked.
+- Use Mermaid only when it makes the explanation clearer, such as processes, flows, timelines, or system relationships. Do not add diagrams by default.
 - When source material comes from the web, capture the useful source context inside the note.
+
+## Fast Skill Prompts
+
+- `notes:` or `obsidian:` means Obsidian-first. Use this for long content to process into notes.
+- `vault:` means direct vault operations with `obsidian-cli`.
+- `gog:` means Google Workspace operations with `gog`.
+- `capture:` means retrieve external or Google Workspace content first, then turn it into an Obsidian note.
+- If a prefix is present, treat it as a strong routing hint unless the request clearly conflicts with it.
+- Even without prefixes, infer the same routing from intent.
 
 ## Git Sync Workflow
 
