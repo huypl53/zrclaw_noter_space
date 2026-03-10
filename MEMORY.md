@@ -1,27 +1,29 @@
 # MEMORY.md — Long-Term Memory
 
-*Your curated memories. The distilled essence, not raw logs.*
-
-## How This Works
-- Daily files (`memory/YYYY-MM-DD.md`) capture raw events (on-demand via tools)
-- This file captures what's WORTH KEEPING long-term
-- This file is auto-injected into your system prompt each session
-- Keep it concise — every character here costs tokens
-
-## Security
-- ONLY loaded in main session (direct chat with your human)
-- NEVER loaded in group chats or shared contexts
-
----
+*Keep only durable facts and decisions here.*
 
 ## Key Facts
-(Add important facts about your human here)
+
+- The user wants ZeroClaw to act as an Obsidian note assistant.
 
 ## Decisions & Preferences
-(Record decisions and preferences here)
+
+- Route long freeform content into the Obsidian note workflow by default.
+- Route Google Workspace actions into the `gog` skill.
+- When Google Workspace content should become notes, use `gog` first and the Obsidian workflow second.
+- Notes created from chat should be hierarchical, tidy, and logically structured.
+- Prefer valid Obsidian-flavored Markdown with useful wikilinks, frontmatter, and tags.
+- Prefer the `gog`, `obsidian-markdown`, and `obsidian-cli` skills when they are available.
+- After successful edits in the Obsidian vault repo, commit the focused changes and push them.
+- Environment-specific vault details belong in `TOOLS.md`.
 
 ## Lessons Learned
-(Document mistakes and insights here)
+
+- The `kepano/obsidian-skills` repo provides `obsidian-markdown`, `obsidian-cli`, `obsidian-bases`, `json-canvas`, and `defuddle`.
+- The `gog` skill is the Google Workspace CLI bridge for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
+- Do not assume a generic note-organization skill exists; note organization must be driven by workflow instructions and vault conventions.
+- Git push should be scoped to the approved vault repo, not treated as globally safe.
 
 ## Open Loops
-(Track unfinished tasks and follow-ups here)
+
+- Fill in the actual vault path, inbox folder, branch, remote, and naming conventions in `TOOLS.md`.

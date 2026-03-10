@@ -1,36 +1,47 @@
 # TOOLS.md — Local Notes
 
-Skills define HOW tools work. This file is for YOUR specifics —
-the stuff that's unique to your setup.
+This file is for machine-specific details that the assistant should not guess.
 
-## What Goes Here
+## Obsidian Vault Setup
 
-Things like:
-- SSH hosts and aliases
-- Device nicknames
-- Preferred voices for TTS
-- Anything environment-specific
+- Vault path: `TODO`
+- Vault name: `TODO`
+- Default inbox or staging folder: `TODO`
+- Preferred top-level folders: `TODO`
+- Default remote: `origin`
+- Default branch: `main`
+- Push policy: pushing note commits from the approved vault repo is routine behavior
+- Obsidian CLI available: `TODO`
+- Obsidian app running requirement: `obsidian-cli` needs a running Obsidian instance
+- `gog` installed and authenticated: `missing`
+- Default Google account for `gog`: `TODO`
+- Installed skills to prefer: `gog`, `obsidian-markdown`, `obsidian-cli`, `defuddle`
 
-## Built-in Tools
+## Workflow Notes
 
-- **shell** — Execute terminal commands
-- Use when: running local checks, build/test commands, or diagnostics.
-- Don't use when: a safer dedicated tool exists, or command is destructive without approval.
-- **file_read** — Read file contents
-- Use when: inspecting project files, configs, or logs.
-- Don't use when: you only need a quick string search (prefer targeted search first).
-- **file_write** — Write file contents
-- Use when: applying focused edits, scaffolding files, or updating docs/code.
-- Don't use when: unsure about side effects or when the file should remain user-owned.
-- **memory_store** — Save to memory
-- Use when: preserving durable preferences, decisions, or key context.
-- Don't use when: info is transient, noisy, or sensitive without explicit need.
-- **memory_recall** — Search memory
-- Use when: you need prior decisions, user preferences, or historical context.
-- Don't use when: the answer is already in current files/conversation.
-- **memory_forget** — Delete a memory entry
-- Use when: memory is incorrect, stale, or explicitly requested to be removed.
-- Don't use when: uncertain about impact; verify before deleting.
+- Check whether the target note already exists before creating a new note.
+- Reuse the existing vault hierarchy before creating new folders or naming schemes.
+- If you establish a new taxonomy rule, also record it in `MEMORY.md`.
+- Commit only the files touched for the current note task.
 
----
-*Add whatever helps you do your job. This is your cheat sheet.*
+## Prompt Classification Hints
+
+- Long user content plus "process", "organize", "summarize", "clean up", or "turn this into notes" means Obsidian-first.
+- Gmail, Calendar, Drive, Contacts, Sheets, or Docs actions mean `gog`.
+- Google Workspace content that should be stored in the vault means `gog` first, then Obsidian.
+- If a request needs both retrieval and note creation, do not stop after retrieval. Finish the note workflow.
+
+## Tool Hints
+
+- `shell` — git status, add, commit, push, and local diagnostics.
+- `gog` — Gmail, Calendar, Drive, Contacts, Sheets, and Docs operations.
+- `file_read` — inspect existing notes, indexes, and templates before editing.
+- `file_write` — apply focused note edits when direct file changes are the right approach.
+- `memory_store` — save durable note conventions and vault workflow decisions.
+- `memory_recall` — fetch prior note structure decisions and user preferences.
+- `memory_forget` — remove stale or incorrect durable memory entries.
+
+## Fill This In
+
+- Put the real vault path, branch, remote, inbox folder, and naming conventions here.
+- If the vault has special rules for daily notes, project notes, or meeting notes, document them here.

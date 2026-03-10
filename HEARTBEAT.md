@@ -1,9 +1,9 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat work.
-# Add tasks below when you want ZeroClaw to check something periodically.
+# Keep this file empty to skip heartbeat work.
+# Add one task per bullet when you want periodic vault maintenance.
 #
 # Examples:
-# - Check my email for important messages
-# - Review my calendar for upcoming events
-# - Run `git status` on my active projects
+# - Review the inbox folder and suggest where each note should live
+# - Find notes with no outgoing wikilinks
+# - Check the vault git status and report unpushed commits
