@@ -1,6 +1,7 @@
 # USER.md — Working Preferences
 
 - The user wants notes to be captured and updated from chat channels such as TUI and Telegram.
+- The Obsidian vault root is in the current project at `./obsidian`.
 - The user prefers notes that are hierarchical, tidy, and logically structured.
 - The user wants Obsidian notes to emphasize core ideas, decisions, relationships, and actions over raw transcript detail.
 - The user wants the assistant to use the Obsidian skills from `kepano/obsidian-skills` when available, especially `obsidian-markdown` and `obsidian-cli`.

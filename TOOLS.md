@@ -4,7 +4,7 @@ This file is for machine-specific details that the assistant should not guess.
 
 ## Obsidian Vault Setup
 
-- Vault path: `TODO`
+- Vault path: `./obsidian`
 - Vault name: `TODO`
 - Default inbox or staging folder: `TODO`
 - Preferred top-level folders: `TODO`
@@ -19,6 +19,7 @@ This file is for machine-specific details that the assistant should not guess.
 
 ## Workflow Notes
 
+- Save note files under `./obsidian` unless the user explicitly names another destination.
 - Check whether the target note already exists before creating a new note.
 - Extract core ideas and structure before polishing wording.
 - Reuse the existing vault hierarchy before creating new folders or naming schemes.

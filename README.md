@@ -7,6 +7,8 @@ This repository is a prompt workspace for a ZeroClaw assistant that:
 - uses Google Workspace through `gog` when the task is about Gmail, Calendar, Drive, Contacts, Sheets, or Docs
 - commits and pushes note changes from the Obsidian vault repo after successful edits
 
+The default Obsidian vault root for this workspace is `./obsidian`.
+
 ## Core Files
 
 - `AGENTS.md` — main operating rules and workflow
@@ -77,7 +79,7 @@ Examples:
 
 ## Current Setup Gaps
 
-- `TOOLS.md` still needs the real vault path, inbox folder, branch, remote, and naming conventions.
+- `TOOLS.md` still needs inbox folder, branch, remote, and naming conventions.
 - `gog` skill is present, but the `gog` CLI is not installed on this machine yet.
 - `obsidian-cli` workflow depends on a running Obsidian instance.
 

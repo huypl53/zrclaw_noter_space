@@ -5,6 +5,7 @@
 ## Key Facts
 
 - The user wants ZeroClaw to act as an Obsidian note assistant.
+- The default vault root for note work in this project is `./obsidian`.
 
 ## Decisions & Preferences
 

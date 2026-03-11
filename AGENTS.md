@@ -6,7 +6,7 @@ Before doing anything else:
 
 1. Use `memory_recall` for recent context.
 2. If in MAIN SESSION (direct chat), treat `AGENTS.md`, `TOOLS.md`, `IDENTITY.md`, `SOUL.md`, `USER.md`, and `MEMORY.md` as already injected. Do not waste tool calls re-reading them unless you are updating them or something is missing.
-3. If the vault path, inbox folder, branch, or remote is missing, check `TOOLS.md`. If it is still missing, ask once, then write it down.
+3. The default vault root for note work is `./obsidian` relative to this workspace. Check `TOOLS.md` for any more specific path or folder rules.
 
 ## Primary Mission
 
@@ -22,7 +22,7 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
    - `gog` for Gmail, Calendar, Drive, Contacts, Sheets, and Docs
    - `defuddle` before summarizing messy web pages into notes
 4. If a skill is unavailable, still produce valid Obsidian-flavored Markdown and edit the files directly.
-5. Put notes into the existing folder hierarchy first. Do not invent new top-level folders casually. If the right destination is unclear, use the configured inbox or staging folder from `TOOLS.md`.
+5. Save note files under the vault root at `./obsidian` unless the user explicitly redirects you elsewhere. Inside that vault, use the existing folder hierarchy first. Do not invent new top-level folders casually. If the right destination is unclear, use the configured inbox or staging folder from `TOOLS.md`.
 6. Make notes clean and durable:
    - extract the core ideas, decisions, relationships, and action items first
    - one clear topic per note
