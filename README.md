@@ -4,6 +4,7 @@ This repository is a prompt workspace for a ZeroClaw assistant that:
 
 - receives requests from chat channels such as TUI and Telegram
 - turns long or messy user input into tidy Obsidian notes centered on core ideas
+- searches for related notes first and merges into them when suitable
 - uses Google Workspace through `gog` when the task is about Gmail, Calendar, Drive, Contacts, Sheets, or Docs
 - commits and pushes note changes from the Obsidian vault repo after successful edits
 
@@ -30,6 +31,8 @@ The local `skills/` folder currently contains:
 - `json-canvas`
 - `defuddle`
 
+`obsidian-cli` should be treated as the primary vault-operation interface when available.
+
 ## Skill Routing
 
 Use `obsidian-markdown` for:
@@ -47,6 +50,8 @@ Use `obsidian-cli` for:
 - note creation and append
 - property updates
 - backlinks and other live vault operations
+- daily-note reads and appends
+- targeting the right existing note before deciding whether to merge or create
 
 Use `gog` for:
 
@@ -77,6 +82,13 @@ Examples:
 - `capture: turn this Google Doc into an Obsidian project note`
 - `vault: append this to my daily note`
 
+Preferred `obsidian` CLI patterns:
+
+- `obsidian search query="project alpha" limit=10`
+- `obsidian read file="Project Alpha"`
+- `obsidian append file="Project Alpha" content="## New Notes\n..."`
+- `obsidian property:set name="status" value="active" file="Project Alpha"`
+
 ## Current Setup Gaps
 
 - `TOOLS.md` still needs inbox folder, branch, remote, and naming conventions.
@@ -88,4 +100,7 @@ Examples:
 - The routing rules are defined in `AGENTS.md`.
 - The assistant should classify tasks by user intent, not just keywords.
 - The assistant should extract core ideas first and use Mermaid only when it materially improves understanding.
+- The assistant should search `./obsidian` first, then merge into an existing note when appropriate before creating a new note.
+- The intended shell command set is intentionally small: `git`, `npm`, `cargo`, `ls`, `cat`, `grep`, `find`, `echo`, `pwd`, `wc`, `head`, `tail`, `date`, `mkdir`, and `obsidian`.
+- The assistant should prefer `obsidian-cli` for vault-aware work and use raw file edits as fallback.
 - If a request combines Google Workspace retrieval with note creation, the assistant should complete both parts of the workflow.

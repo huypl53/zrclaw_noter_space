@@ -12,6 +12,8 @@
 - Route long freeform content into the Obsidian note workflow by default.
 - Route Google Workspace actions into the `gog` skill.
 - When Google Workspace content should become notes, use `gog` first and the Obsidian workflow second.
+- Search `./obsidian` first and merge into an existing note when it already fits the topic.
+- Prefer `obsidian-cli` for vault-aware search and note updates when available.
 - Notes created from chat should be hierarchical, tidy, and logically structured.
 - Obsidian notes should focus on core ideas, decisions, relationships, and action items first.
 - Prefer valid Obsidian-flavored Markdown with useful wikilinks, frontmatter, and tags.

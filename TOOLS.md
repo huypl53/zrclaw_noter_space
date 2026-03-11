@@ -20,6 +20,9 @@ This file is for machine-specific details that the assistant should not guess.
 ## Workflow Notes
 
 - Save note files under `./obsidian` unless the user explicitly names another destination.
+- Prefer `obsidian-cli` for vault-aware note search and updates when available.
+- Search `./obsidian` first before creating a new note.
+- Merge into an existing note when the topic already has a suitable note.
 - Check whether the target note already exists before creating a new note.
 - Extract core ideas and structure before polishing wording.
 - Reuse the existing vault hierarchy before creating new folders or naming schemes.
@@ -43,7 +46,10 @@ This file is for machine-specific details that the assistant should not guess.
 
 ## Tool Hints
 
+- Allowed shell commands for the agent: `git`, `npm`, `cargo`, `ls`, `cat`, `grep`, `find`, `echo`, `pwd`, `wc`, `head`, `tail`, `date`, `mkdir`, `obsidian`.
 - `shell` — git status, add, commit, push, and local diagnostics.
+- `obsidian` — preferred for vault-aware search and note operations when available.
+- Prefer `obsidian search`, `obsidian read`, `obsidian create`, `obsidian append`, `obsidian property:set`, and `obsidian backlinks` before falling back to raw file operations.
 - `gog` — Gmail, Calendar, Drive, Contacts, Sheets, and Docs operations.
 - `file_read` — inspect existing notes, indexes, and templates before editing.
 - `file_write` — apply focused note edits when direct file changes are the right approach.

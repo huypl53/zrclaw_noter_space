@@ -15,15 +15,16 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
 ## Default Workflow
 
 1. Identify the job: new note, note update, inbox capture, note cleanup, or note reorganization.
-2. Recall relevant context and inspect the vault before creating a duplicate note.
-3. Choose the skill path before acting:
+2. Recall relevant context and search `./obsidian` first for related notes before creating anything. Prefer `obsidian` CLI for vault-aware search and note targeting. Fall back to `find`, `grep`, `ls`, and `cat` only when `obsidian` is unavailable or insufficient.
+3. Merge into an existing note when the topic, project, person, meeting, or date already has a suitable home. Create a new note only when no suitable note exists or the content deserves its own note.
+4. Choose the skill path before acting:
    - `obsidian-markdown` for `.md` note structure and Obsidian syntax
-   - `obsidian-cli` for vault-aware operations when the CLI and running app are available
+   - `obsidian-cli` as the preferred path for vault-aware search, create, append, property updates, backlinks, and daily-note operations when the CLI and running app are available
    - `gog` for Gmail, Calendar, Drive, Contacts, Sheets, and Docs
    - `defuddle` before summarizing messy web pages into notes
-4. If a skill is unavailable, still produce valid Obsidian-flavored Markdown and edit the files directly.
-5. Save note files under the vault root at `./obsidian` unless the user explicitly redirects you elsewhere. Inside that vault, use the existing folder hierarchy first. Do not invent new top-level folders casually. If the right destination is unclear, use the configured inbox or staging folder from `TOOLS.md`.
-6. Make notes clean and durable:
+5. If a skill is unavailable, still produce valid Obsidian-flavored Markdown and edit the files directly.
+6. Save note files under the vault root at `./obsidian` unless the user explicitly redirects you elsewhere. Inside that vault, use the existing folder hierarchy first. Do not invent new top-level folders casually. If the right destination is unclear, use the configured inbox or staging folder from `TOOLS.md`.
+7. Make notes clean and durable:
    - extract the core ideas, decisions, relationships, and action items first
    - one clear topic per note
    - a precise title
@@ -31,8 +32,8 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
    - headings in logical order
    - `[[wikilinks]]` to related notes
    - tags only when they improve retrieval
-7. When editing an existing note, preserve the user's structure and change only the relevant sections.
-8. Verify that the raw Markdown is clean and the note would render properly in Obsidian.
+8. When editing an existing note, preserve the user's structure and change only the relevant sections.
+9. Verify that the raw Markdown is clean and the note would render properly in Obsidian.
 
 ## Skill Routing By Prompt Shape
 
@@ -61,6 +62,27 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
 - `capture:` means retrieve external or Google Workspace content first, then turn it into an Obsidian note.
 - If a prefix is present, treat it as a strong routing hint unless the request clearly conflicts with it.
 - Even without prefixes, infer the same routing from intent.
+
+## Shell Command Budget
+
+- Prefer the allowed shell commands the user exposed to the agent: `git`, `npm`, `cargo`, `ls`, `cat`, `grep`, `find`, `echo`, `pwd`, `wc`, `head`, `tail`, `date`, `mkdir`, and `obsidian`.
+- For note discovery and updates, prefer `obsidian` commands such as search, read, create, append, property updates, backlinks, and daily-note actions.
+- For note discovery, prefer `obsidian` search when available, then `find` plus `grep`.
+- Do not assume richer shell tooling is available.
+
+## Obsidian CLI Priority
+
+- Prefer `obsidian-cli` over raw file edits when the task is vault-aware and the CLI is available.
+- Use `obsidian` to search and target notes before creating duplicates.
+- Use `obsidian` to append to existing notes, set properties, inspect backlinks, and work with daily notes.
+- Fall back to direct file edits only when `obsidian` is unavailable, the app is not running, or the task is easier as a plain file edit.
+- Typical commands to prefer:
+  - `obsidian search query="keyword" limit=10`
+  - `obsidian read file="Note Name"`
+  - `obsidian create name="Note Name" content="# Title" silent`
+  - `obsidian append file="Note Name" content="New section"`
+  - `obsidian property:set name="status" value="done" file="Note Name"`
+  - `obsidian backlinks file="Note Name"`
 
 ## Git Sync Workflow
 
