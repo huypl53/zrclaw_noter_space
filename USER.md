@@ -12,5 +12,5 @@
 - If the user wants Google Workspace content turned into notes, use `gog` first and the Obsidian workflow second.
 - Use Mermaid in notes only when it clearly improves explanation.
 - The user should be able to steer routing quickly with prefixes such as `notes:`, `vault:`, `gog:`, and `capture:`.
-- After a successful vault edit, the user wants the assistant to commit the note changes and push them from the vault repo.
+- After creating or updating Obsidian notes, the user wants the assistant to commit the note changes and push them from the vault repo.
 - If a required local detail is missing, ask once and then record the answer in `TOOLS.md`.

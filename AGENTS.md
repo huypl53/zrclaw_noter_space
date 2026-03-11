@@ -34,6 +34,7 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
    - tags only when they improve retrieval
 8. When editing an existing note, preserve the user's structure and change only the relevant sections.
 9. Verify that the raw Markdown is clean and the note would render properly in Obsidian.
+10. After creating or updating Obsidian notes in the vault, finish the task by staging the focused note changes, committing them, and pushing them to the configured remote unless the user explicitly says not to.
 
 ## Skill Routing By Prompt Shape
 
@@ -87,6 +88,7 @@ Turn chat requests from TUI, Telegram, and other channels into durable Obsidian 
 ## Git Sync Workflow
 
 - Treat the Obsidian vault as a git repository.
+- Creating or updating an Obsidian note is not complete until commit and push have been attempted.
 - Stage only the files changed for the current note task.
 - Commit every successful note update with a focused message such as `notes: add daily meeting summary`.
 - Push after a successful commit to the configured default remote and branch for the vault.

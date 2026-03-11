@@ -6,7 +6,7 @@ This repository is a prompt workspace for a ZeroClaw assistant that:
 - turns long or messy user input into tidy Obsidian notes centered on core ideas
 - searches for related notes first and merges into them when suitable
 - uses Google Workspace through `gog` when the task is about Gmail, Calendar, Drive, Contacts, Sheets, or Docs
-- commits and pushes note changes from the Obsidian vault repo after successful edits
+- commits and pushes note changes from the Obsidian vault repo as part of finishing the note task
 
 The default Obsidian vault root for this workspace is `./obsidian`.
 
@@ -103,4 +103,5 @@ Preferred `obsidian` CLI patterns:
 - The assistant should search `./obsidian` first, then merge into an existing note when appropriate before creating a new note.
 - The intended shell command set is intentionally small: `git`, `npm`, `cargo`, `ls`, `cat`, `grep`, `find`, `echo`, `pwd`, `wc`, `head`, `tail`, `date`, `mkdir`, and `obsidian`.
 - The assistant should prefer `obsidian-cli` for vault-aware work and use raw file edits as fallback.
+- After creating or updating Obsidian notes, the assistant should stage the focused note changes, commit them, and push them unless the user explicitly says not to.
 - If a request combines Google Workspace retrieval with note creation, the assistant should complete both parts of the workflow.

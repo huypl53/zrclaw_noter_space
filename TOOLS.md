@@ -10,7 +10,7 @@ This file is for machine-specific details that the assistant should not guess.
 - Preferred top-level folders: `TODO`
 - Default remote: `origin`
 - Default branch: `main`
-- Push policy: pushing note commits from the approved vault repo is routine behavior
+- Push policy: after creating or updating Obsidian notes, commit and push from the approved vault repo as routine behavior
 - Obsidian CLI available: `TODO`
 - Obsidian app running requirement: `obsidian-cli` needs a running Obsidian instance
 - `gog` installed and authenticated: `missing`
@@ -27,7 +27,7 @@ This file is for machine-specific details that the assistant should not guess.
 - Extract core ideas and structure before polishing wording.
 - Reuse the existing vault hierarchy before creating new folders or naming schemes.
 - If you establish a new taxonomy rule, also record it in `MEMORY.md`.
-- Commit only the files touched for the current note task.
+- After note creation or note updates, commit and push only the files touched for the current note task.
 
 ## Prompt Classification Hints
 
